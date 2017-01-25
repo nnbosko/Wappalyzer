@@ -137,6 +137,10 @@
 
 				page.onError = function(message) {
 					wappalyzer.log(message, 'error');
+
+					wappalyzer.driver.sendResponse();
+
+					phantom.exit(1);
 				};
 
 				page.onResourceTimeout = function() {
